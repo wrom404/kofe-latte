@@ -13,7 +13,7 @@ const Home = () => {
           <p className="text-lg leading-12 tracking-wide">
             Discover a whole new level of flavor and enjoyable.
           </p>
-          <button className="my-6 text-2xl py-4 px-8 bg-(--fifth-color) hover:bg-[#a34b08] flex items-center gap-2 rounded-full cursor-pointer"> <ShoppingCart size={24} /> Order now</button>
+          <button className="my-6 text-2xl py-4 px-8 bg-(--fifth-color) hover:bg-[#a34b08] flex items-center gap-2 rounded-full cursor-pointer font-extralight"> <ShoppingCart size={24} /> Order now</button>
         </div>
       </div>
       <div className="flex-1 p-4 flex justify-center items-center">

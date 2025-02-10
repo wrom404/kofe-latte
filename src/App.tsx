@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from "react-router"
-// import Page from "./pages/Page"
 import Home from "./pages/Page"
 
 const App = () => {
