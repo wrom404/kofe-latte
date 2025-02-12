@@ -17,7 +17,7 @@ export const About = () => {
             accusantium iusto dolores. Molestiae, harum suscipit.
           </p>
         </div>
-        <button className="bg-(--fifth-color) py-3 px-5 rounded-2xl font-extralight my-4 hover:bg-[#a34b08] cursor-pointer">Learn more</button>
+        <button className="bg-(--fifth-color) py-3 px-5 rounded-2xl font-extralight my-4 hover:bg-[#a34b08] cursor-pointer text-gray-100">Learn more</button>
       </div>
     </div>
   );
