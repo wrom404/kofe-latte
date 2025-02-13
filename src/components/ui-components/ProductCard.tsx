@@ -13,9 +13,14 @@ import { motion } from "framer-motion";
 const ProductCard = ({ product }: { product: mockFeaturedProductType }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 2, delay: product.id * .3 }}
+      initial={{ opacity: 0, y: 20 }} // Start slightly lower
+      whileInView={{ opacity: 1, y: 0 }} // Move up smoothly
+      transition={{
+        duration: 0.4,
+        ease: "easeInOut",
+        delay: product.id * 0.05,
+      }} // Faster animation
+      viewport={{ amount: 0.3 }} // Triggers when 30% of the card is visible
     >
       <Card className="bg-(--secondary-color) text-gray-200 border-none rounded-none rounded-br-4xl rounded-tl-4xl">
         <div className="w-60 overflow-hidden rounded-tl-4xl">
