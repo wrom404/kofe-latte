@@ -10,7 +10,24 @@ import {
 } from "@/components/ui/card";
 import { motion } from "framer-motion";
 
-const ProductCard = ({ product }: { product: mockFeaturedProductType }) => {
+const ProductCard = ({
+  product,
+  setIsModalOpen,
+  isModalOpen,
+  setImageName,
+}: {
+  product: mockFeaturedProductType;
+  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  isModalOpen: boolean;
+  setImageName: React.Dispatch<React.SetStateAction<string>>;
+}) => {
+
+  const handleClick = (imageName: string) => {
+    setImageName(imageName);
+    setIsModalOpen(!isModalOpen);
+  };
+  
+  console.log("image name:" + product.image);
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }} // Start slightly lower
@@ -23,7 +40,10 @@ const ProductCard = ({ product }: { product: mockFeaturedProductType }) => {
       viewport={{ amount: 0.3 }} // Triggers when 30% of the card is visible
     >
       <Card className="bg-(--secondary-color) text-gray-200 border-none rounded-none rounded-br-4xl rounded-tl-4xl">
-        <div className="w-60 overflow-hidden rounded-tl-4xl">
+        <div
+          onClick={() => handleClick(product.image)}
+          className="w-60 overflow-hidden rounded-tl-4xl"
+        >
           <img
             className="rounded-tl-xl hover:scale-105 transition-transform cursor-pointer"
             src={product.image}

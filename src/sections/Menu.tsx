@@ -1,7 +1,11 @@
+import CardModal from "@/components/ui-components/CardModal";
 import ProductCard from "@/components/ui-components/ProductCard";
 import { mockMenuProducts } from "@/constants/products";
+import { useState } from "react";
 
 const Menu = () => {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [imageName, setImageName] = useState<string>('');
   return (
     <div
       className="min-h-screen flex justify-center items-center flex-col pt-6"
@@ -14,9 +18,10 @@ const Menu = () => {
       </p>
       <div className="grid grid-cols-4 gap-12">
         {mockMenuProducts.map((product) => (
-          <ProductCard product={product} />
+          <ProductCard setImageName={setImageName} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}  product={product} />
         ))}
       </div>
+      <CardModal imageName={imageName} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
     </div>
   );
 };

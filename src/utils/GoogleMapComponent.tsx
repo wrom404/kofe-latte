@@ -1,3 +1,4 @@
+import { CoordinatesType } from "@/types/types";
 import { useEffect, useState } from "react";
 import { GoogleMap, Marker } from "@react-google-maps/api";
 
@@ -7,20 +8,14 @@ const containerStyle = {
   height: "400px",
 };
 
-// Define TypeScript type for coordinates
-type Coordinates = {
-  lat: number;
-  lng: number;
-};
-
-// Default location (Manila, PH)
-const defaultCenter: Coordinates = {
+// Default location (Ormoc, PH)
+const defaultCenter: CoordinatesType = {
   lat: 11.0069,
   lng: 124.6075,
 };
 
 const GoogleMapComponent: React.FC = () => {
-  const [location, setLocation] = useState<Coordinates>(defaultCenter);
+  const [location, setLocation] = useState<CoordinatesType>(defaultCenter);
   const API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
   const [scriptLoaded, setScriptLoaded] = useState(false);
 
