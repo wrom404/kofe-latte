@@ -1,6 +1,6 @@
 import { CiHeart } from "react-icons/ci";
 import { GoPlus } from "react-icons/go";
-import { mockFeaturedProductType } from "@/types/types";
+import { ProductCardType } from "@/types/types";
 import {
   Card,
   CardContent,
@@ -12,21 +12,15 @@ import { motion } from "framer-motion";
 
 const ProductCard = ({
   product,
-  setIsModalOpen,
+  setIsModalOpen = () => {},
   isModalOpen,
-  setImageName,
-}: {
-  product: mockFeaturedProductType;
-  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  isModalOpen: boolean;
-  setImageName: React.Dispatch<React.SetStateAction<string>>;
-}) => {
-
+  setImageName = () => {},
+}: ProductCardType) => {
   const handleClick = (imageName: string) => {
     setImageName(imageName);
     setIsModalOpen(!isModalOpen);
   };
-  
+
   console.log("image name:" + product.image);
   return (
     <motion.div

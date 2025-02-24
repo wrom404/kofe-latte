@@ -1,5 +1,13 @@
 export type ProductCardType = {
-  length: number
+  product: {
+    id: number,
+  name: string,
+  price: string,
+  image: string
+  },
+  setIsModalOpen?: React.Dispatch<React.SetStateAction<boolean>>,
+  isModalOpen?: boolean,
+  setImageName?: React.Dispatch<React.SetStateAction<string>>,
 }
 
 export type mockFeaturedProductType = {
